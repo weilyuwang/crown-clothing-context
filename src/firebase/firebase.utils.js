@@ -1,15 +1,16 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
-const config = {
-  apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
-  authDomain: 'crwn-db.firebaseapp.com',
-  databaseURL: 'https://crwn-db.firebaseio.com',
-  projectId: 'crwn-db',
-  storageBucket: 'crwn-db.appspot.com',
-  messagingSenderId: '850995411664',
-  appId: '1:850995411664:web:7ddc01d597846f65'
+var config = {
+  apiKey: "AIzaSyDaBrNfc0sjM6Ht2RhaKER8NQdC_3WFVyQ",
+  authDomain: "crown-clothing-db-c5fff.firebaseapp.com",
+  databaseURL: "https://crown-clothing-db-c5fff.firebaseio.com",
+  projectId: "crown-clothing-db-c5fff",
+  storageBucket: "crown-clothing-db-c5fff.appspot.com",
+  messagingSenderId: "443117383558",
+  appId: "1:443117383558:web:53516db798c47e61dc4607",
+  measurementId: "G-VWSVQ8X99Y"
 };
 
 firebase.initializeApp(config);
@@ -32,7 +33,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         ...additionalData
       });
     } catch (error) {
-      console.log('error creating user', error.message);
+      console.log("error creating user", error.message);
     }
   }
 
@@ -43,7 +44,7 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
